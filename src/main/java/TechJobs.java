@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -24,6 +23,7 @@ public class TechJobs {
         HashMap<String, String> actionChoices = new HashMap<>();
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
+        //**
 
         System.out.println("Welcome to LaunchCode's TechJobs App!");
 
@@ -77,7 +77,7 @@ public class TechJobs {
         Boolean validChoice = false;
         String[] choiceKeys = new String[choices.size()];
 
-        // Put the choices in an ordered structure so we can
+        // Put the choices in an ordered structure, so we can
         // associate an integer with each one
         int i = 0;
         for (String choiceKey : choices.keySet()) {
@@ -120,6 +120,50 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+//        String[] jobKeys = new String[someJobs.size()];
+
+//        int i = 0;
+//        for (Map<String, String> jobKey : someJobs) {
+//            jobKeys[i] = jobKey;
+//            i++;
+//        }
+
+//        for (Map<String, String> entry : someJobs) {
+//            for (String key : entry.keySet()) {
+//                String value = entry.get(key);
+//                System.out.println(key + ": " + value);
+//
+//            }
+//
+
+//        Boolean found = false;
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+        } else {
+
+            for (HashMap<String, String> map : someJobs) {
+                System.out.println("\n*****");
+
+                for (HashMap.Entry<String, String> entry : map.entrySet()) {
+                    String key = entry.getKey();
+                    String value = entry.getValue();
+                    System.out.println(key + ": " + value);
+
+                    //                if (key.equals(in.nextLine())) {
+                    //                    System.out.println( key + ": " + value );
+                    //                    found = true;
+                    //                    break;
+                    //                }
+                }
+                System.out.println("*****");
+                //            if (found) {
+                //                break;
+                //            }
+            }
+        }
+//        if (!found) {
+//            System.out.println("No Results");
+//        }
+
     }
 }
